@@ -1,0 +1,50 @@
+import javax.swing.*;
+import java.awt.*;
+
+public class jtextfieldjlabel {
+
+    public static void main(String[] args) {
+
+        JFrame frame = new JFrame("JLabel and JTextField");
+        frame.setSize(400, 250);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLayout(new FlowLayout());
+
+        // JLabel
+        JLabel label1 = new JLabel("Enter your Name:");
+
+        // JTextField
+        JTextField textField = new JTextField(20);
+
+        // JLabel
+        JLabel label2 = new JLabel("Enter your Age:");
+
+        // JTextField
+        JTextField textField2 = new JTextField(20);
+
+        // JButton
+        JButton button = new JButton("Submit");
+
+        // Result JLabel
+        JLabel result = new JLabel("");
+
+        // Button Action
+        button.addActionListener(e -> {
+            String name = textField.getText();
+            String age = textField2.getText();
+
+            result.setText("Name: " + name + " | Age: " + age);
+        });
+
+        // Add components
+        frame.add(label1);
+        frame.add(textField);
+        frame.add(label2);
+        frame.add(textField2);
+        frame.add(button);
+        frame.add(result);
+
+        frame.setLocationRelativeTo(null);
+        frame.setVisible(true);
+    }
+}
