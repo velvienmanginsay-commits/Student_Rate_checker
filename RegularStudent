@@ -1,0 +1,68 @@
+import javax.swing.*;
+import java.awt.*;
+
+public class RegularStudent {
+
+    public static void main(String[] args) {
+
+        JFrame frame = new JFrame("Regular Student Information");
+        frame.setSize(400, 350);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLayout(new FlowLayout());
+
+        JLabel title = new JLabel("REGULAR STUDENT INFORMATION");
+        JLabel nameLabel = new JLabel("Student Name:");
+        JTextField nameField = new JTextField(20);
+
+        JLabel idLabel = new JLabel("Student ID:");
+        JTextField idField = new JTextField(20);
+
+        JLabel courseLabel = new JLabel("Course:");
+        JTextField courseField = new JTextField(20);
+
+        JLabel yearLabel = new JLabel("Year Level:");
+        JTextField yearField = new JTextField(20);
+
+        JButton submitButton = new JButton("SUBMIT");
+        JButton clearButton = new JButton("CLEAR");
+
+        JLabel result = new JLabel("");
+
+        // Submit Button
+        submitButton.addActionListener(e -> {
+
+            String name = nameField.getText();
+            String id = idField.getText();
+            String course = courseField.getText();
+            String year = yearField.getText();
+
+            result.setText("Student: " + name + " | ID: " + id
+                    + " | Course: " + course + " | Year: " + year);
+        });
+
+        // Clear Button
+        clearButton.addActionListener(e -> {
+            nameField.setText("");
+            idField.setText("");
+            courseField.setText("");
+            yearField.setText("");
+            result.setText("");
+        });
+
+        frame.add(title);
+        frame.add(nameLabel);
+        frame.add(nameField);
+        frame.add(idLabel);
+        frame.add(idField);
+        frame.add(courseLabel);
+        frame.add(courseField);
+        frame.add(yearLabel);
+        frame.add(yearField);
+        frame.add(submitButton);
+        frame.add(clearButton);
+        frame.add(result);
+
+        frame.setLocationRelativeTo(null);
+        frame.setVisible(true);
+    }
+}
